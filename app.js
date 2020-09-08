@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 
 
 const app = experss();
+
+//set view engine
+app.set('view engine', 'ejs');
+
 const port = process.env.PORT;
 const dbUrl = process.env.REMOTE_URL || process.env.LOCAL_DATABSE_URL;
 
@@ -18,7 +22,7 @@ app.use(experss.json());
 
 // root route 
 app.get('/', (req, res) => {
-    res.send("The Api");
+    res.render('index');
 });
 
 // api route 
