@@ -1,4 +1,6 @@
-//require('dotenv').config({ path: __dirname + '/Env/.env' });
+try {
+    require('dotenv').config({ path: __dirname + '/Env/.env' });
+} catch (e) {}
 const experss = require('express');
 const mongoose = require('mongoose');
 
