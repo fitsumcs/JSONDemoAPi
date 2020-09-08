@@ -7,6 +7,7 @@ const app = experss();
 
 //set view engine
 app.set('view engine', 'ejs');
+app.use(experss.static('public'));
 
 const port = process.env.PORT;
 const dbUrl = process.env.REMOTE_URL || process.env.LOCAL_DATABSE_URL;
