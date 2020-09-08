@@ -43,10 +43,35 @@ router.post('/users', async(req, res) => {
 });
 
 // Updating one user 
-router.patch('/users/:id', (req, res) => {});
+router.patch('/users/:id', getUser, async(req, res) => {
+    if (req.body.name) {
+        res.user.name = req.body.name;
+    }
+    if (req.body.age) {
+        res.user.age = req.body.age;
+    }
+    if (req.body.phone) {
+        res.user.phone = req.body.phone;
+    }
+    try {
+        const updateUser = await res.user.save();
+        res.json(updateUser);
+    } catch (error) {
+        res.status(400).json({ error: err.message });
+
+    }
+});
 
 // Creating one user 
-router.delete('/users/:id', (req, res) => {});
+router.delete('/users/:id', getUser, async(req, res) => {
+
+    try {
+        await res.user.remove();
+        res.json({ message: "User Deleted!!" })
+    } catch (err) {
+        res.status(500).json({ error: err.message })
+    }
+});
 
 
 
