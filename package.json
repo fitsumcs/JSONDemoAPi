@@ -1,21 +1,24 @@
 {
-  "name": "demo_api",
-  "version": "1.0.0",
-  "description": "Demo REST Api for fake users data , that can be used for testing ",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "REST",
-    "API",
-    "USERS",
-    "Data"
-  ],
-  "author": "Fitsum A.",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.3"
-  }
+    "name": "demo_api",
+    "version": "1.0.0",
+    "description": "Demo REST Api for fake users data , that can be used for testing ",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [
+        "REST",
+        "API",
+        "USERS",
+        "Data"
+    ],
+    "author": "Fitsum A.",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.10.3"
+    },
+    "devDependencies": {
+        "dotenv": "^8.2.0"
+    }
 }
