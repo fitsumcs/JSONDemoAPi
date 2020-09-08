@@ -8,7 +8,9 @@ router.get('/users', (req, res) => {
 });
 
 // Getting one user 
-router.get('/users/:id', (req, res) => {});
+router.get('/users/:id', (req, res) => {
+    res.send(req.params.id)
+});
 
 // Creating one user 
 router.post('/users', (req, res) => {});
