@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const app = experss();
 const port = process.env.PORT;
-const dbUrl = process.env.LOCAL_DATABSE_URL || process.env.REMOTE_URL;
+const dbUrl = process.env.REMOTE_URL;
 
 mongoose.connect(dbUrl, { useNewUrlParser: true });
 const db = mongoose.connection;
