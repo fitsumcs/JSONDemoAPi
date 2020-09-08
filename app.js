@@ -1,12 +1,13 @@
-require('dotenv').config({ path: __dirname + '/Env/.env' });
+//require('dotenv').config({ path: __dirname + '/Env/.env' });
 const experss = require('express');
 const mongoose = require('mongoose');
 
 
 const app = experss();
 const port = process.env.PORT;
+const dbUrl = process.env.LOCAL_DATABSE_URL || process.env.REMOTE_URL;
 
-mongoose.connect(process.env.LOCAL_DATABSE_URL, { useNewUrlParser: true });
+mongoose.connect(dbUrl, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log("Databse Connected!!"));
