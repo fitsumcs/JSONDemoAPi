@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 
 const app = experss();
 const port = process.env.PORT;
-const dbUrl = process.env.REMOTE_URL;
+const dbUrl = process.env.REMOTE_URL || process.env.LOCAL_DATABSE_URL;
 
-mongoose.connect(dbUrl, { useNewUrlParser: true });
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log("Databse Connected!!"));
